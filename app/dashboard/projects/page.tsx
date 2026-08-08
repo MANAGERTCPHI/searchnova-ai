@@ -2,6 +2,8 @@ import Link from "next/link";
 import { FolderKanban, Plus, Search } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProjectsPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
