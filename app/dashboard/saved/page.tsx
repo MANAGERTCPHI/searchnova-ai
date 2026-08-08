@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Bookmark, ExternalLink } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 
+export const dynamic = "force-dynamic";
+
 export default async function SavedKeywordsPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
